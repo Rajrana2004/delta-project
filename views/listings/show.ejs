@@ -1,5 +1,10 @@
 <% layout("/layouts/boilerplate") %>
 <style>
+    .review-card { width: 100%; }
+
+    @media (min-width: 768px) {
+        .review-card { width: 50%;}
+    }
     @media (max-width: 767px) {
         .row.mt-3 {
             padding-left: 1rem;
@@ -103,7 +108,7 @@
             <div class="row">
             <p><b>All Reviews</b></p>
             <% for(review of listing.reviews) { %>
-            <div class="card col-12 col-md-5 ms-md-3 mb-3">
+            <div class="card mb-3 review-card">
                 <div class="card-body">
                     <h5 class="card-title">@<%= review.author.username %></h5>
                     <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
